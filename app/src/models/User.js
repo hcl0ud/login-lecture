@@ -6,9 +6,10 @@ class User {
     constructor(body) {
         this.body = body;
     }
+
     login() {
         const body = this.body;
-        const { id, psword } = UserStorage.getUsers(body.id);
+        const { id, psword } = UserStorage.getUserInfo(body.id);
 
         if (id) {
             if (id === body.id && psword === body.psword) {
